@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOMIC — VISUAL ARCHIVE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA DI NAVIGAZIONE FISSA SATINATA (CON LOGO SALTO PREVIEW) -->
+    <nav class="main-nav sticky-nav">
+        <div class="nav-left">
+            <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit;">LOOMIC</a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html?skip=true">← CORE ARCHIVE</a>
+        </div>
+    </nav>
+
+    <!-- CONTAINER GENERALE DELLA GALLERIA -->
+    <div class="container site-content-wrapper">
+        
+        <!-- INTESTAZIONE ARCHIVIO E NUOVI FILTRI MATERICO-REALI -->
+        <header class="archive-header">
+            <div>
+                <span class="album-caption">LOOMIC V3.0beta // MATERIAL STUDY</span>
+            </div>
+            <div class="archive-filters">
+                <button class="filter-btn active" onclick="filterArchive('all', event)">ALL INDEX</button>
+                <button class="filter-btn" onclick="filterArchive('monolith', event)">MONOLITH</button>
+                <button class="filter-btn" onclick="filterArchive('fluid', event)">FLUID</button>
+                <button class="filter-btn" onclick="filterArchive('fabric', event)">FABRIC</button>
+            </div>
+        </header>
+
+        <!-- GRIGLIA ASIMMETRICA 3 COLONNE (RIPRISTINATA) -->
+        <main class="archive-masonry-flow" id="archiveGrid">
+            <!-- 01 / MERCURY CORE -->
+            <div class="archive-node col-span-2 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_01_MERCURY_CORE.jpg" data-type="fluid" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_01_MERCURY_CORE.jpg" alt="MERCURY CORE" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>01 / MERCURY CORE // [FLUID]</span>
+                </div>
+            </div>
+
+            <!-- 02 / BRUTALIST ROOM -->
+            <div class="archive-node col-span-1 shift-down-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_02_BRUTALIST_ROOM.jpg" data-type="monolith" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_02_BRUTALIST_ROOM.jpg" alt="BRUTALIST ROOM" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>02 / BRUTALIST ROOM // [MONOLITH]</span>
+                </div>
+            </div>
+
+            <!-- 03 / AVANTGARDE SCULPTURE -->
+            <div class="archive-node col-span-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_03_AVANTGARDE_SCULPTURE.jpg" data-type="fabric" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_03_AVANTGARDE_SCULPTURE.jpg" alt="AVANTGARDE SCULPTURE" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>03 / AVANTGARDE SCULPTURE // [FABRIC]</span>
+                </div>
+            </div>
+
+            <!-- 04 / RAW TEXTILE -->
+            <div class="archive-node col-span-2 shift-up-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_04_RAW_TEXTILE.jpg" data-type="fabric" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_04_RAW_TEXTILE.jpg" alt="RAW TEXTILE" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>04 / RAW TEXTILE // [FABRIC]</span>
+                </div>
+            </div>
+
+            <!-- 05 / METALLIC DISTORTION -->
+            <div class="archive-node col-span-2 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_05_METALLIC_DISTORTION.jpg" data-type="fluid" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_05_METALLIC_DISTORTION.jpg" alt="METALLIC DISTORTION" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>05 / METALLIC DISTORTION // [FLUID]</span>
+                </div>
+            </div>
+
+            <!-- 06 / CONCRETE MONOLITH -->
+            <div class="archive-node col-span-1 shift-down-2 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_06_CONCRETE_MONOLITH.jpg" data-type="monolith" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_06_CONCRETE_MONOLITH.jpg" alt="CONCRETE MONOLITH" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>06 / CONCRETE MONOLITH // [MONOLITH]</span>
+                </div>
+            </div>
+
+            <!-- 07 / WORN LEATHER -->
+            <div class="archive-node col-span-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_07_WORN_LEATHER.jpg" data-type="fabric" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_07_WORN_LEATHER.jpg" alt="WORN LEATHER" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>07 / WORN LEATHER // [FABRIC]</span>
+                </div>
+            </div>
+
+            <!-- 08 / MONUMENTAL RUNWAY -->
+            <div class="archive-node col-span-2 shift-up-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_08_MONUMENTAL_RUNWAY.jpg" data-type="monolith" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_08_MONUMENTAL_RUNWAY.jpg" alt="MONUMENTAL RUNWAY" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>08 / MONUMENTAL RUNWAY // [MONOLITH]</span>
+                </div>
+            </div>
+
+            <!-- 09 / MERCURY GRID -->
+            <div class="archive-node col-span-1 shift-down-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_09_MERCURY_GRID.jpg" data-type="fluid" style="cursor: pointer;">
+                <div class="image-viewport">
+                    <img src="public/assets/archive/LOOMIC_VA_09_MERCURY_GRID.jpg" alt="MERCURY GRID" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="node-caption">
+                    <span>09 / MERCURY GRID // [FLUID]</span>
+                </div>
+            </div>
+
+        </main>
+        <!-- FOOTER TERMINALE (Identico a index.html) -->
+        <footer class="site-footer">
+            <div class="footer-grid">
+                <div class="footer-item">
+                    <span class="label">IDENTITY</span>
+                    <p>AVANT-GARDE AUDIO ENTITY</p>
+                </div>
+                <div class="footer-item">
+                    <span class="label">ARCHITECTURE</span>
+                    <p>OFFLINE WORKSPACE // SECURE VAULT ACCESS</p>
+                </div>
+                <div class="footer-item">
+                    <span class="label">INQUIRIES</span>
+                    <p><a href="contact.html" class="email-link">CONTACT // REQUEST KEY</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- STRUTTURA DEL LIGHTBOX NUDA (SENZA CORNICI, SFONDO SCURITO) -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content">
+            <img src="" id="lightboxImage" alt="Ingrandimento Archivio LOOMIC" oncontextmenu="return false;">
+        </div>
+    </div>
+
+    <!-- LOGICA DI FILTRAGGIO ALGORITMICO MATERICO E LIGHTBOX -->
+    <script>
+        function filterArchive(type, event) {
+            // Aggiorna lo stato visivo dei pulsanti filtro
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Mostra o nasconde i nodi d'immagine in base alle categorie concettuali
+            const items = document.querySelectorAll('.archive-node');
+            items.forEach(item => {
+                if (type === 'all' || item.getAttribute('data-type') === type) {
+                    item.classList.remove('hidden-node');
+                } else {
+                    item.classList.add('hidden-node');
+                }
+            });
+        }
+
+        // Sistema di Ingrandimento Lightbox su Sfondo Scurito
+        const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const imageSrc = this.getAttribute('data-src');
+                lightboxImage.src = imageSrc;
+                lightboxOverlay.classList.add('visible');
+            });
+        });
+
+        // Chiude la vista al click in un punto qualsiasi dello sfondo oscurato
+        lightboxOverlay.addEventListener('click', function() {
+            lightboxOverlay.classList.remove('visible');
+            setTimeout(() => { lightboxImage.src = ""; }, 300);
+        });
+    </script>
+</body>
+</html>

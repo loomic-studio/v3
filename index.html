@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOMIC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA DI NAVIGAZIONE FISSA TRASPARENTE STILE KERING -->
+    <nav class="main-nav sticky-nav">
+        <div class="nav-left">
+            <span class="brand-title" id="logoTrigger" style="cursor: pointer;">LOOMIC</span>
+        </div>
+        <div class="nav-right">
+            <a href="#previewHero" id="menuPreviewBtn">PREVIEW</a>
+            <a href="#manifesto">MANIFESTO</a>
+            
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">SOCIAL</span>
+                <div class="dropdown-content">
+                    <a href="https://instagram.com" target="_blank">INSTAGRAM ↗</a>
+                </div>
+            </div>
+
+            <a href="contact.html">CONTACT</a>
+        </div>
+    </nav>
+
+    <!-- AREA PREVIEW A TUTTO SCHERMO CON IMMAGINI E DIDASCALIE -->
+    <section class="preview-hero-container" id="previewHero">
+        <button class="slider-arrow arrow-left" id="prevBtn" oncontextmenu="return false;">&lt;</button>
+        
+        <div class="slider-viewport" id="sliderViewport">
+            <!-- IMMAGINE 01 -->
+            <div class="slide active">
+                <img src="public/assets/archive/LOOMIC_VA_01_MERCURY_CORE.jpg" alt="01">
+                <div class="magazine-text">
+                    <span class="mag-issue">SPECULATION 01 // OVER CORE</span>
+                    <p class="mag-headline">THE LIQUID IDENTITY OF RAW SOUND ARCHITECTURES.</p>
+                </div>
+            </div>
+            <!-- IMMAGINE 02 -->
+            <div class="slide">
+                <img src="public/assets/archive/LOOMIC_VA_02_BRUTALIST_ROOM.jpg" alt="02">
+                <div class="magazine-text">
+                    <span class="mag-issue">VOL. II // PERSPECTIVE STUDY</span>
+                    <p class="mag-headline">GEOMETRIC SILENCE WITHIN BRUTALIST SPACE.</p>
+                </div>
+            </div>
+            <!-- IMMAGINE 03 -->
+            <div class="slide">
+                <img src="public/assets/archive/LOOMIC_VA_03_AVANTGARDE_SCULPTURE.jpg" alt="03">
+                <div class="magazine-text">
+                    <span class="mag-issue">PHOENIX LAYER // 1.0 CORE</span>
+                    <p class="mag-headline">AVANT-GARDE MATERIC OBJECTIFICATION FOR RUNWAYS.</p>
+                </div>
+            </div>
+            <!-- IMMAGINE 04 -->
+            <div class="slide">
+                <img src="public/assets/archive/LOOMIC_VA_04_RAW_TEXTILE.jpg" alt="04">
+                <div class="magazine-text">
+                    <span class="mag-issue">TEXTILE INTERACTION // ANALYSIS</span>
+                    <p class="mag-headline">UNRELEASED SPECTRUM EMBEDDED IN HIGH-END COUTURE.</p>
+                </div>
+            </div>
+            <!-- IMMAGINE 05 -->
+            <div class="slide">
+                <img src="public/assets/archive/LOOMIC_VA_05_METALLIC_DISTORTION.jpg" alt="05">
+                <div class="magazine-text">
+                    <span class="mag-issue">METALLIC PHENOMENON // 05</span>
+                    <p class="mag-headline">ACOUSTIC NEED AND INDEPENDENT COMPLIANCE PROTOCOL.</p>
+                </div>
+            </div>
+            <!-- IMMAGINE 06 -->
+            <div class="slide">
+                <img src="public/assets/archive/LOOMIC_VA_06_CONCRETE_MONOLITH.jpg" alt="06">
+                <div class="magazine-text">
+                    <span class="mag-issue">MONOLITH STUDY // PARIS - MILANO</span>
+                    <p class="mag-headline">SYSTEMIC SOUND FRAMEWORKS FOR SPATIAL INSTALLATIONS.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="slider-arrow arrow-right" id="nextBtn" oncontextmenu="return false;">&gt;</button>
+    </section>
+    <!-- CONTAINER PRINCIPALE DEL SITO (GEOMETRIE ORIGINALI OWENS) -->
+    <div class="container site-content-wrapper">
+        
+        <!-- SEZIONE 1: VETRINA ALBUM CONFIGURATA PER L'INGRANDIMENTO INTERNO -->
+                <!-- SEZIONE 1: L'ARRAY DELLE COPERTINE DEGLI ALBUM (CRONOLOGIA CORRETTA: ULTIMO RILASCIO A SINISTRA) -->
+        <section class="gallery-section">
+            <div class="album-grid">
+                <!-- METRIC SHELL: L'ULTIMO CAPOLAVORO ORA A SINISTRA -->
+                <div class="album-wrapper lightbox-trigger" data-src="public/assets/albums/METRIC_SHELL_Cover.jpeg" style="cursor: pointer;">
+                    <img src="public/assets/albums/METRIC_SHELL_Cover.jpeg" alt="METRIC SHELL COVER" class="visual-core" oncontextmenu="return false;" ondragstart="return false;">
+                    <span class="album-caption">COLLECTION 02 / METRIC SHELL [LATEST ARCHIVAL RELEASE]</span>
+                </div>
+                <!-- CORE: IL PRIMO ALBUM REALIZZATO ORA A DESTRA -->
+                <div class="album-wrapper lightbox-trigger" data-src="public/assets/albums/CORE_Cover.jpeg" style="cursor: pointer;">
+                    <img src="public/assets/albums/CORE_Cover.jpeg" alt="CORE ALBUM COVER" class="visual-core" oncontextmenu="return false;" ondragstart="return false;">
+                    <span class="album-caption">COLLECTION 01 / CORE [FIRST SPECULATIVE STUDY]</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SEZIONE 2: MANIFESTO & IGIENE LEGALE -->
+        <section class="poetry-section" id="manifesto">
+            <p class="verse">01 / THE ACOUSTIC NEED</p>
+            <p class="verse">A PURIFIED VISUAL IDENTITY IS STRUCTURALLY INCOMPLETE WITHOUT AUDIO COHERENCE.</p>
+            <p class="verse">LOOMIC ENGINEERS SYSTEMIC SOUND ARCHITECTURES FOR HIGH-END SPATIAL INSTALLATIONS, COUTURE RUNWAYS, AND GLOBAL RELEASES.</p>
+            
+            <br><br><br>
+            
+            <p class="verse-legal">02 / IP COMPLIANCE PROTOCOL</p>
+            <p class="verse-legal">ALL AUDIO ASSETS ARE 100% INDEPENDENTLY PRODUCED AND UNRELEASED. ZERO THIRD-PARTY SAMPLES. FULL INTELLECTUAL PROPERTY INDEMNITY GUARANTEED FOR EXCLUSIVE GLOBAL COMMERCIAL TITLE TRANSFER. SINGLE-BUYER B2B LICENSE PER ARCHIVE.</p>
+        </section>
+
+        <!-- SEZIONE 3: I DUE BLOCCHI MONUMENTALI GEMELLI -->
+        <section class="interactive-hub-section">
+            <div class="hub-grid">
+                
+                <div class="hub-box secondary-box" onclick="window.location.href='gallery.html';">
+                    <div class="hub-trigger-bar">
+                        <span>VISUAL ARCHIVE</span>
+                    </div>
+                </div>
+
+                <div class="hub-box primary-box" id="listenContainer">
+                    <div class="hub-trigger-bar" id="listenTrigger">
+                        <span>LISTEN</span>
+                    </div>
+                    <div class="listen-drawer-content">
+                        <span class="vault-meta">ENTER EXCLUSIVE B2B LINK / ACCESS KEY:</span>
+                        <div class="input-vault-group">
+                            <input type="text" id="vaultUrlInput" placeholder="" autocomplete="off">
+                            <button id="vaultSubmitBtn">OK</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER TERMINALE CON LINK ALLA PAGINA DEI CONTATTI INDIPENDENTE -->
+        <footer class="site-footer">
+            <div class="footer-grid">
+                <div class="footer-item">
+                    <span class="label">IDENTITY</span>
+                    <p>AVANT-GARDE AUDIO ENTITY</p>
+                </div>
+                <div class="footer-item">
+                    <span class="label">ARCHITECTURE</span>
+                    <p>OFFLINE WORKSPACE // SECURE VAULT ACCESS</p>
+                </div>
+                <div class="footer-item">
+                    <span class="label">INQUIRIES</span>
+                    <p><a href="contact.html" class="email-link">CONTACT // REQUEST KEY</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- AREA DI OSCURAMENTO LIGHTBOX A TUTTO SCHERMO (DI DEFAULT NASCOSTA) -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content">
+            <img src="" id="lightboxImage" alt="Ingrandimento Copertina LOOMIC" oncontextmenu="return false;">
+        </div>
+    </div>
+    <!-- ==========================================================================
+       LOGICA DINAMICA JAVASCRIPT (SBLOCCO CASSETTO, SLIDER E LIGHTBOX INTERNO)
+       ========================================================================== -->
+    <script>
+        // Logica originale per l'apertura del cassetto "LISTEN"
+        const listenTrigger = document.getElementById('listenTrigger');
+        const listenContainer = document.getElementById('listenContainer');
+        const vaultSubmitBtn = document.getElementById('vaultSubmitBtn');
+        const vaultUrlInput = document.getElementById('vaultUrlInput');
+
+        listenTrigger.addEventListener('click', function(e) {
+            listenContainer.classList.toggle('expanded');
+        });
+
+        vaultSubmitBtn.addEventListener('click', function() {
+            const destinationUrl = vaultUrlInput.value.trim();
+            if (destinationUrl !== "") {
+                window.open(destinationUrl, '_blank');
+            } else {
+                alert("ACCESS KEY REQUIRED.");
+            }
+        });
+
+        vaultUrlInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                vaultSubmitBtn.click();
+            }
+        });
+
+        // Logica dello Slider Pre-Gallery Kering-Style
+        const previewHero = document.getElementById('previewHero');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const menuPreviewBtn = document.getElementById('menuPreviewBtn');
+        const logoTrigger = document.getElementById('logoTrigger');
+        
+        let currentIndex = 0;
+        let slideInterval;
+        const intervalTime = 5000;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            if (index >= slides.length) currentIndex = 0;
+            if (index < 0) currentIndex = slides.length - 1;
+            slides[currentIndex].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            showSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex--;
+            showSlide(currentIndex);
+        }
+
+// INTERCETTAZIONE LOGICA DI SALTO PREVIEW (DA LOGO INTERNO)
+if (window.location.search.includes('skip=true')) {
+    previewHero.classList.add('collapsed');
+    clearInterval(slideInterval);
+    // Elimina il parametro dall'indirizzo per pulizia estetica B2B
+    window.history.replaceState({}, document.title, window.location.pathname);
+}
+
+
+        function startAutoplay() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, intervalTime);
+        }
+
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            nextSlide();
+            startAutoplay();
+        });
+
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            prevSlide();
+            startAutoplay();
+        });
+
+        function collapseSlider() {
+            previewHero.classList.add('collapsed');
+            clearInterval(slideInterval);
+            const contentOffset = document.querySelector('.site-content-wrapper').offsetTop - 140;
+            window.scrollTo({ top: contentOffset, behavior: 'smooth' });
+        }
+
+        previewHero.addEventListener('click', collapseSlider);
+        logoTrigger.addEventListener('click', collapseSlider);
+
+        menuPreviewBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            previewHero.classList.remove('collapsed');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            startAutoplay();
+        });
+
+        // ==========================================================================
+        // SISTEMA LOGICO LIGHTBOX INTERNO (INGRANDIMENTO COPERTINE CON OVERLAY)
+        // ==========================================================================
+        const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const triggers = document.querySelectorAll('.lightbox-trigger');
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const imageSrc = this.getAttribute('data-src');
+                lightboxImage.src = imageSrc;
+                lightboxOverlay.classList.add('visible');
+            });
+        });
+
+        // Chiude la vista al click in un punto qualsiasi dello sfondo oscurato
+        lightboxOverlay.addEventListener('click', function() {
+            lightboxOverlay.classList.remove('visible');
+            setTimeout(() => { lightboxImage.src = ""; }, 300);
+        });
+
+        startAutoplay();
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOMIC — CONTACT // ACQUISITIONS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- MENU SUPERIORE INTERNO -->
+        <nav class="main-nav">
+            <div class="nav-left">
+    <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit;">LOOMIC</a>
+</div>
+
+
+        </nav>
+
+        <!-- SEZIONE CENTRALE MONUMENTALE ACQUISIZIONI B2B (NO MONEY / PURE PROTOCOL) -->
+        <main class="contact-page-wrapper">
+            <header class="contact-header">
+                <span class="label">B2B EXCLUSIVE TITLE TRANSFER // INQUIRIES</span>
+                <h1 class="verse" style="margin-top: 10px; margin-bottom: 0;">SPECULATIVE LICENSE REQUEST</h1>
+            </header>
+
+            <form action="https://formspree.io" method="POST" class="contact-monolithic-form" autocomplete="off">
+                
+                <!-- Instradamento automatico alla mail Gmail protetta -->
+                <input type="hidden" name="_to" value="loomic.music@gmail.com">
+
+                <!-- 1. Nome Azienda / Brand -->
+                <div class="form-field-group">
+                    <label class="vault-meta">01 / COMPANY OR BRAND REPRESENTED</label>
+                    <input type="text" name="company" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
+                </div>
+
+                <!-- 2. Tipo di Progetto / Destinazione d'uso -->
+                <div class="form-field-group">
+                    <label class="vault-meta">02 / PROJECT DESTINATION</label>
+                    <input type="text" name="project_type" placeholder="E.G. GLOBAL CAMPAIGN / RUNWAY SHOW / SPATIAL INSTALLATION" required autocomplete="off">
+                </div>
+
+                <!-- 3. Protocollo di Acquisizione Licenza (Riformulato senza accenni a denaro) -->
+                <div class="form-field-group">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                        <label class="vault-meta">03 / INTENDED ACQUISITION PROTOCOL</label>
+                        <span class="vault-meta" style="font-weight: bold; font-size: 10px;">↓</span>
+                    </div>
+                    <select name="acquisition_protocol" required class="monolithic-select">
+                        <option value="" disabled selected>SELECT LICENSING FRAMEWORK</option>
+                        <option value="confidential">CONFIDENTIAL COMMERCIAL ASSET INCLUSION</option>
+                        <option value="global_broadcast">GLOBAL BROADCAST TITLE TRANSFER</option>
+                        <option value="perpetual_exclusive">PERPETUAL EXCLUSIVE TERRITORY LICENSE</option>
+                    </select>
+                </div>
+
+                <!-- 4. Email Aziendale Obbligatoria -->
+                <div class="form-field-group">
+                    <label class="vault-meta">04 / CORPORATE EMAIL ADDRESS</label>
+                    <input type="email" name="_replyto" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
+                </div>
+
+                <!-- 5. Messaggio di richiesta Chiave di Accesso Vault -->
+                <div class="form-field-group">
+                    <label class="vault-meta">05 / PROPOSAL SPECIFICATIONS // VAULT KEY REQUEST</label>
+                    <textarea name="message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK AND SONIC PARAMETERS REQUIRED..." rows="5" required></textarea>
+                </div>
+
+                <!-- Pulsante di Invio Monumentale -->
+                <button type="submit" class="form-submit-btn" style="padding: 16px; font-size: 10px; margin-top: 10px;">
+                    SUBMIT ARCHIVAL ACCESS REQUEST
+                </button>
+            </form>
+        </main>
+    </div>
+
+</body>
+</html>
