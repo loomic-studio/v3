@@ -594,3 +594,24 @@ body {
         transform: none;
     }
 }
+
+/* Ottimizzazione specifica per Mobile (Smartphone) */
+@media screen and (max-width: 768px) {
+    /* Riduce l'altezza e l'ingombro del banner traslucido */
+    header, .nav-banner, .banner-traslucido { 
+        height: auto !important;
+        padding: 10px 5px !important;
+        position: sticky !important;
+    }
+    /* Dispone le voci del menu in modo che non si taglino */
+    nav, .menu-voci {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+    /* Riduce la dimensione del testo del menu per farlo entrare tutto */
+    nav a, .menu-voci a {
+        font-size: 12px !important;
+    }
+}
