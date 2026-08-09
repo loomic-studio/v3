@@ -615,3 +615,90 @@ body {
         font-size: 12px !important;
     }
 }
+
+/* ==========================================================================
+   OTTIMIZZAZIONE MOBILE VERTICALE E ORIZZONTALE (Fase Unificazione V3.0)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Reset Fluidità Globale */
+    .container, .site-content-wrapper {
+        padding: 0 20px !important; /* Riduce il margine laterale eccessivo sui display stretti */
+    }
+
+    .site-content-wrapper {
+        margin-top: 180px !important; /* Evita che il contenuto vada sotto il menu che ora va a capo */
+    }
+
+    /* 2. Menu di Navigazione Elastico */
+    .main-nav, .sticky-nav {
+        height: auto !important; /* Rende l'altezza fluida */
+        flex-direction: column !important; /* Incolonna Logo e Link sul Redmi Note 10 */
+        justify-content: center !important;
+        gap: 15px !important;
+        padding: 20px 15px !important;
+    }
+
+    .nav-right {
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    .nav-right a {
+        margin-left: 15px !important; /* Avvicina i link sul mobile per non farli uscire dallo schermo */
+        margin-right: 15px !important;
+        padding-bottom: 4px !important;
+    }
+
+    /* 3. Vetrina Album Fluida (Da Orizzontale a Verticale) */
+    .album-grid {
+        flex-direction: column !important; /* Incolonna gli album evitando il collasso grafico */
+        gap: 30px !important;
+    }
+
+    .visual-core {
+        max-height: 60vh !important; /* Regola la proporzione ottimale sui display lunghi 20:9 */
+    }
+
+    /* 4. Hub Interattivo (Pulsanti LISTEN e VAULT) */
+    .hub-grid {
+        flex-direction: column !important; /* Incolonna i due box interattivi */
+        gap: 20px !important;
+    }
+
+    .input-vault-group {
+        flex-direction: column !important; /* Incolonna campo testo e bottone per il tocco mobile */
+    }
+
+    .input-vault-group button {
+        padding: 12px 0 !important; /* Rende il tasto più grande e facile da premere */
+    }
+
+    /* 5. Footer Adattivo */
+    .footer-grid {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+}
+
+/* Ottimizzazione per Mobile Orizzontale (Landscape - Quando ruoti il Redmi) */
+@media (max-width: 900px) and (orientation: landscape) {
+    .site-content-wrapper {
+        margin-top: 140px !important;
+    }
+
+    .main-nav, .sticky-nav {
+        flex-direction: row !important; /* Mantiene la riga se lo schermo è largo */
+        height: 90px !important;
+        padding: 0 30px !important;
+    }
+
+    .album-grid {
+        flex-direction: row !important; /* Ripristina l'affiancamento se c'è spazio orizzontale */
+        gap: 20px !important;
+    }
+
+    .preview-hero-container {
+        height: 100vh !important;
+    }
+}
