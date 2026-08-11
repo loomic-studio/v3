@@ -6,6 +6,48 @@
     <title>LOOMICMUSIC^ | Official Site</title>
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="Mw1dgmtipgqqptWuRCSob_YcB_D8BLxTyAjpkr1ON4g" />
+    <script>
+document.addEventListener('contextmenu', function(e) {
+    // Blocco totale del tasto destro e del menu contestuale su Safari/Mobile
+    e.preventDefault();
+}, false);
+
+document.addEventListener('keydown', function(e) {
+    // Blocco delle scorciatoie da tastiera per il salvataggio (Cmd+S, Cmd+Alt+I, Cmd+Shift+4, ecc.)
+    if (e.metaKey && (e.key === 's' || e.key === 'S')) {
+        e.preventDefault();
+    }
+    if (e.metaKey && e.altKey && (e.key === 'i' || e.key === 'I' || e.key === 'c' || e.key === 'C')) {
+        e.preventDefault();
+    }
+}, false);
+
+// Blocco del trascinamento (Drag and Drop) di tutte le immagini del sito
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+        });
+        // Protezione aggiuntiva per Safari Mobile (pressione prolungata)
+        img.style.webkitUserSelect = "none";
+        img.style.webkitTouchCallout = "none";
+    });
+});
+</script>
+
+<style>
+/* CSS di sbarramento: impedisce la selezione visiva e il salvataggio prolungato su iOS/Safari */
+img {
+    -webkit-touch-callout: none !important; /* Disabilita il menu a comparsa su iPhone/iPad */
+    -webkit-user-select: none !important;   /* Disabilita la selezione dell'immagine */
+    -khtml-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    pointer-events: none !important;        /* Rende l'immagine "trasparente" ai clic, impedendo il drag */
+}
+</style>
+
 </head>
 <body>
 
