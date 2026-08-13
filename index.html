@@ -3,69 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOOMICMUSIC^ | Official Site</title>
+    <title>LOOMIC</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="google-site-verification" content="Mw1dgmtipgqqptWuRCSob_YcB_D8BLxTyAjpkr1ON4g" />
-    <script>
-document.addEventListener('contextmenu', function(e) {
-    // Blocco totale del tasto destro e del menu contestuale su Safari/Mobile
-    e.preventDefault();
-}, false);
-
-document.addEventListener('keydown', function(e) {
-    // Blocco delle scorciatoie da tastiera per il salvataggio (Cmd+S, Cmd+Alt+I, Cmd+Shift+4, ecc.)
-    if (e.metaKey && (e.key === 's' || e.key === 'S')) {
-        e.preventDefault();
-    }
-    if (e.metaKey && e.altKey && (e.key === 'i' || e.key === 'I' || e.key === 'c' || e.key === 'C')) {
-        e.preventDefault();
-    }
-}, false);
-
-// Blocco del trascinamento (Drag and Drop) di tutte le immagini del sito
-window.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('dragstart', function(e) {
-            e.preventDefault();
-        });
-        // Protezione aggiuntiva per Safari Mobile (pressione prolungata)
-        img.style.webkitUserSelect = "none";
-        img.style.webkitTouchCallout = "none";
-    });
-});
-</script>
-<style>
-/* CSS di sbarramento totale avanzato per Safari e Mobile */
-img, div:not(.lightbox-overlay):not(.slider-arrow), section, a, figure {
-    -webkit-touch-callout: none !important; /* Disabilita menu salvataggio su iOS */
-    -webkit-user-select: none !important;   /* Impedisce la selezione su Safari Mac */
-    -khtml-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-}
-
-/* Applica la protezione da trascinamento e clic solo alle immagini e non ai comandi di controllo */
-img, .visual-core {
-    pointer-events: none !important;        /* Rende l'immagine intoccabile e non scaricabile */
-    -webkit-user-drag: none !important;     /* Blocco specifico per il drag su Safari Mac */
-    user-drag: none !important;
-}
-
-/* Assicura che i pulsanti e l'oscuramento intercettino sempre i click dell'utente */
-.slider-arrow, .lightbox-overlay, .lightbox-content {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-}
-</style>
+<meta name="google-site-verification" content="Mw1dgmtipgqqptWuRCSob_YcB_D8BLxTyAjpkr1ON4g" />
 </head>
-
 <body>
 
     <!-- BARRA DI NAVIGAZIONE FISSA TRASPARENTE STILE KERING -->
     <nav class="main-nav sticky-nav">
         <div class="nav-left">
-            <span class="brand-title" id="logoTrigger" style="cursor: pointer;">LOOMICMUSIC^</span>
+            <span class="brand-title" id="logoTrigger" style="cursor: pointer;">LOOMIC</span>
         </div>
         <div class="nav-right">
             <a href="#previewHero" id="menuPreviewBtn">PREVIEW</a>
@@ -143,14 +90,15 @@ img, .visual-core {
     <div class="container site-content-wrapper">
         
         <!-- SEZIONE 1: VETRINA ALBUM CONFIGURATA PER L'INGRANDIMENTO INTERNO -->
+                <!-- SEZIONE 1: L'ARRAY DELLE COPERTINE DEGLI ALBUM (CRONOLOGIA CORRETTA: ULTIMO RILASCIO A SINISTRA) -->
         <section class="gallery-section">
             <div class="album-grid">
-                <!-- METRIC SHELL -->
+                <!-- METRIC SHELL: L'ULTIMO CAPOLAVORO ORA A SINISTRA -->
                 <div class="album-wrapper lightbox-trigger" data-src="public/assets/albums/METRIC_SHELL_Cover.jpeg" style="cursor: pointer;">
                     <img src="public/assets/albums/METRIC_SHELL_Cover.jpeg" alt="METRIC SHELL COVER" class="visual-core" oncontextmenu="return false;" ondragstart="return false;">
                     <span class="album-caption">COLLECTION 02 / METRIC SHELL [LATEST ARCHIVAL RELEASE]</span>
                 </div>
-                <!-- CORE -->
+                <!-- CORE: IL PRIMO ALBUM REALIZZATO ORA A DESTRA -->
                 <div class="album-wrapper lightbox-trigger" data-src="public/assets/albums/CORE_Cover.jpeg" style="cursor: pointer;">
                     <img src="public/assets/albums/CORE_Cover.jpeg" alt="CORE ALBUM COVER" class="visual-core" oncontextmenu="return false;" ondragstart="return false;">
                     <span class="album-caption">COLLECTION 01 / CORE [FIRST SPECULATIVE STUDY]</span>
@@ -158,7 +106,8 @@ img, .visual-core {
             </div>
         </section>
 
-<!-- SEZIONE 2: MANIFESTO & IGIENE LEGALE -->
+
+        <!-- SEZIONE 2: MANIFESTO & IGIENE LEGALE -->
         <section class="poetry-section" id="manifesto">
             <p class="verse">01 / THE ACOUSTIC NEED</p>
             <p class="verse">A PURIFIED VISUAL IDENTITY IS STRUCTURALLY INCOMPLETE WITHOUT AUDIO COHERENCE.</p>
@@ -221,39 +170,34 @@ img, .visual-core {
             <img src="" id="lightboxImage" alt="Ingrandimento Copertina LOOMIC" oncontextmenu="return false;">
         </div>
     </div>
-
-<!-- ==========================================================================
-       LOGICA DINAMICA JAVASCRIPT CORRETTA ED OTTIMIZZATA (LCM^ VAULT SYSTEM)
-       ========================================================================= -->
+    <!-- ==========================================================================
+       LOGICA DINAMICA JAVASCRIPT (SBLOCCO CASSETTO, SLIDER E LIGHTBOX INTERNO)
+       ========================================================================== -->
     <script>
-        // Logica per l'apertura del cassetto "LISTEN"
+        // Logica originale per l'apertura del cassetto "LISTEN"
         const listenTrigger = document.getElementById('listenTrigger');
         const listenContainer = document.getElementById('listenContainer');
         const vaultSubmitBtn = document.getElementById('vaultSubmitBtn');
         const vaultUrlInput = document.getElementById('vaultUrlInput');
 
-        if (listenTrigger && listenContainer) {
-            listenTrigger.addEventListener('click', function(e) {
-                listenContainer.classList.toggle('expanded');
-            });
-        }
+        listenTrigger.addEventListener('click', function(e) {
+            listenContainer.classList.toggle('expanded');
+        });
 
-        if (vaultSubmitBtn && vaultUrlInput) {
-            vaultSubmitBtn.addEventListener('click', function() {
-                const destinationUrl = vaultUrlInput.value.trim();
-                if (destinationUrl !== "") {
-                    window.open(destinationUrl, '_blank');
-                } else {
-                    alert("ACCESS KEY REQUIRED.");
-                }
-            });
+        vaultSubmitBtn.addEventListener('click', function() {
+            const destinationUrl = vaultUrlInput.value.trim();
+            if (destinationUrl !== "") {
+                window.open(destinationUrl, '_blank');
+            } else {
+                alert("ACCESS KEY REQUIRED.");
+            }
+        });
 
-            vaultUrlInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    vaultSubmitBtn.click();
-                }
-            });
-        }
+        vaultUrlInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                vaultSubmitBtn.click();
+            }
+        });
 
         // Logica dello Slider Pre-Gallery Kering-Style
         const previewHero = document.getElementById('previewHero');
@@ -268,7 +212,6 @@ img, .visual-core {
         const intervalTime = 5000;
 
         function showSlide(index) {
-            if (!slides.length) return;
             slides.forEach(slide => slide.classList.remove('active'));
             if (index >= slides.length) currentIndex = 0;
             if (index < 0) currentIndex = slides.length - 1;
@@ -285,72 +228,51 @@ img, .visual-core {
             showSlide(currentIndex);
         }
 
-        if (window.location.search.includes('skip=true') && previewHero) {
-            previewHero.classList.add('collapsed');
-            clearInterval(slideInterval);
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
+// INTERCETTAZIONE LOGICA DI SALTO PREVIEW (DA LOGO INTERNO)
+if (window.location.search.includes('skip=true')) {
+    previewHero.classList.add('collapsed');
+    clearInterval(slideInterval);
+    // Elimina il parametro dall'indirizzo per pulizia estetica B2B
+    window.history.replaceState({}, document.title, window.location.pathname);
+}
+
 
         function startAutoplay() {
             clearInterval(slideInterval);
             slideInterval = setInterval(nextSlide, intervalTime);
         }
 
-        if (nextBtn) {
-            nextBtn.addEventListener('click', function(e) {
-                e.stopPropagation(); // Impedisce la chiusura dello slider sul click della freccia
-                nextSlide();
-                startAutoplay();
-            });
-        }
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            nextSlide();
+            startAutoplay();
+        });
 
-        if (prevBtn) {
-            prevBtn.addEventListener('click', function(e) {
-                e.stopPropagation(); // Impedisce la chiusura dello slider sul click della freccia
-                prevSlide();
-                startAutoplay();
-            });
-        }
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            prevSlide();
+            startAutoplay();
+        });
 
-        function collapseSlider(e) {
-            // Chiude lo slider solo se il click NON avviene sulle frecce di navigazione o elementi interni
-            if (e.target.classList.contains('slider-arrow')) return;
-            
+        function collapseSlider() {
             previewHero.classList.add('collapsed');
             clearInterval(slideInterval);
-            const contentWrapper = document.querySelector('.site-content-wrapper');
-            if (contentWrapper) {
-                const contentOffset = contentWrapper.offsetTop - 140;
-                window.scrollTo({ top: contentOffset, behavior: 'smooth' });
-            }
+            const contentOffset = document.querySelector('.site-content-wrapper').offsetTop - 140;
+            window.scrollTo({ top: contentOffset, behavior: 'smooth' });
         }
 
-        if (previewHero) {
-            previewHero.addEventListener('click', collapseSlider);
-        }
-        
-        if (logoTrigger) {
-            logoTrigger.addEventListener('click', function(e) {
-                previewHero.classList.add('collapsed');
-                clearInterval(slideInterval);
-                const contentWrapper = document.querySelector('.site-content-wrapper');
-                if (contentWrapper) {
-                    window.scrollTo({ top: contentWrapper.offsetTop - 140, behavior: 'smooth' });
-                }
-            });
-        }
+        previewHero.addEventListener('click', collapseSlider);
+        logoTrigger.addEventListener('click', collapseSlider);
 
-        if (menuPreviewBtn && previewHero) {
-            menuPreviewBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                previewHero.classList.remove('collapsed');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                startAutoplay();
-            });
-        }
+        menuPreviewBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            previewHero.classList.remove('collapsed');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            startAutoplay();
+        });
 
         // ==========================================================================
-        // SISTEMA LIGHTBOX INTERNO AGGIORNATO (SBLOCCO CHIUSURA ED OVERLAY)
+        // SISTEMA LOGICO LIGHTBOX INTERNO (INGRANDIMENTO COPERTINE CON OVERLAY)
         // ==========================================================================
         const lightboxOverlay = document.getElementById('lightboxOverlay');
         const lightboxImage = document.getElementById('lightboxImage');
@@ -360,25 +282,16 @@ img, .visual-core {
             trigger.addEventListener('click', function(e) {
                 e.stopPropagation();
                 const imageSrc = this.getAttribute('data-src');
-                if (lightboxImage) lightboxImage.src = imageSrc;
-                if (lightboxOverlay) lightboxOverlay.classList.add('visible');
+                lightboxImage.src = imageSrc;
+                lightboxOverlay.classList.add('visible');
             });
         });
 
-        if (lightboxOverlay) {
-            // Sblocca la chiusura cliccando in qualsiasi punto dell'overlay oscurato
-            lightboxOverlay.addEventListener('click', function(e) {
-                lightboxOverlay.classList.remove('visible');
-                setTimeout(() => { if (lightboxImage) lightboxImage.src = ""; }, 300);
-            });
-        }
-
-        // Sistema di notifica per l'adeguamento B2B del modulo contatto
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('status') === 'success') {
-            alert("Inquiry received. The request is currently being processed by the archive management. A secure access key or direct response will be transmitted to the verified email address if compliant with our current release protocols.");
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
+        // Chiude la vista al click in un punto qualsiasi dello sfondo oscurato
+        lightboxOverlay.addEventListener('click', function() {
+            lightboxOverlay.classList.remove('visible');
+            setTimeout(() => { lightboxImage.src = ""; }, 300);
+        });
 
         startAutoplay();
     </script>
