@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOOMICMUSIC^ — CONTACT // ACQUISITIONS</title>
     <link rel="stylesheet" href="style.css">
+    <!-- SDK Ufficiale Forminit da 2 KB per l'invio asincrono sicuro -->
+    <script src="https://forminit.com"></script>
     <script>
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
@@ -36,28 +38,25 @@ document.addEventListener('keydown', function(e) {
                 <h1 class="verse" style="margin-top: 10px; margin-bottom: 0;">SPECULATIVE LICENSE REQUEST</h1>
             </header>
 
-            <!-- Modulo crittografato collegato all'endpoint Forminit ufficiale -->
-            <form action="https://forminit.com" method="POST" class="contact-monolithic-form" autocomplete="off">
+            <!-- Modulo gestito dall'SDK in background per evitare il blocco 403 -->
+            <form id="loomic-b2b-form" class="contact-monolithic-form" autocomplete="off">
                 
-                <!-- Reindirizzamento automatico silenzioso alla Home Page dopo l'invio -->
-                <input type="hidden" name="_next" value="https://github.io">
-
                 <!-- 01 / Azienda -->
                 <div class="form-field-group">
                     <label class="vault-meta">01 / COMPANY OR BRAND REPRESENTED</label>
-                    <input type="text" name="name" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
+                    <input type="text" id="company_name" name="name" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
                 </div>
 
                 <!-- 02 / Email Aziendale -->
                 <div class="form-field-group">
                     <label class="vault-meta">02 / CORPORATE EMAIL ADDRESS</label>
-                    <input type="email" name="email" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
+                    <input type="email" id="company_email" name="email" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
                 </div>
 
                 <!-- 03 / Specifiche del Progetto -->
                 <div class="form-field-group">
                     <label class="vault-meta">03 / PROPOSAL SPECIFICATIONS // VAULT KEY REQUEST</label>
-                    <textarea name="message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK, PROJECT DESTINATION AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
+                    <textarea id="project_specs" name="message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK, PROJECT DESTINATION AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
                 </div>
 
                 <button type="submit" class="form-submit-btn" style="padding: 16px; font-size: 10px; margin-top: 10px; width: 100%; cursor: pointer; background-color: #21201D; color: #FFFFFF; border: none; text-transform: uppercase; letter-spacing: 2px;">
@@ -66,5 +65,34 @@ document.addEventListener('keydown', function(e) {
             </form>
         </main>
     </div>
+
+    <script>
+        // Logica di instradamento protetta tramite API Forminit
+        const forminit = new Forminit();
+        const b2bForm = document.getElementById('loomic-b2b-form');
+
+        if (b2bForm) {
+            b2bForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Disabilita temporaneamente il pulsante per evitare invii multipli
+                const submitBtn = b2bForm.querySelector('.form-submit-btn');
+                if (submitBtn) submitBtn.disabled = true;
+
+                const formData = new FormData(b2bForm);
+                
+                // Esegue l'invio asincrono aggirando il firewall CloudFront
+                const { error } = await forminit.submit('8x9zklqtc8t', formData);
+
+                if (!error) {
+                    // Reindirizzamento pulito alla index in caso di successo
+                    window.location.href = "https://github.io";
+                } else {
+                    alert("Submission error. Please verify network credentials.");
+                    if (submitBtn) submitBtn.disabled = false;
+                }
+            });
+        }
+    </script>
 </body>
 </html>
