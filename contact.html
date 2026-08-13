@@ -22,36 +22,39 @@ document.addEventListener('keydown', function(e) {
 </head>
 <body>
     <div class="container">
+        <!-- MENU SUPERIORE INTERNO -->
         <nav class="main-nav">
             <div class="nav-left">
                 <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit;">LOOMICMUSIC^</a>
             </div>
         </nav>
+        
+        <!-- SEZIONE CENTRALE MONUMENTALE ACQUISIZIONI B2B -->
         <main class="contact-page-wrapper">
             <header class="contact-header">
                 <span class="label">B2B EXCLUSIVE TITLE TRANSFER // INQUIRIES</span>
                 <h1 class="verse" style="margin-top: 10px; margin-bottom: 0;">SPECULATIVE LICENSE REQUEST</h1>
             </header>
 
-            <!-- Modulo crittografato collegato all'endpoint reale Forminit 8x9zklqtc8t -->
+            <!-- Modulo crittografato collegato all'endpoint Forminit ufficiale -->
             <form action="https://forminit.com" method="POST" class="contact-monolithic-form" autocomplete="off">
                 
-                <!-- Parametro ufficiale Forminit per il reindirizzamento pulito alla Home Page -->
+                <!-- Reindirizzamento automatico silenzioso alla Home Page dopo l'invio -->
                 <input type="hidden" name="_next" value="https://github.io">
 
-                <!-- 01 / Azienda (Mappato su attributo standard richiesto dal server) -->
+                <!-- 01 / Azienda -->
                 <div class="form-field-group">
                     <label class="vault-meta">01 / COMPANY OR BRAND REPRESENTED</label>
                     <input type="text" name="name" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
                 </div>
 
-                <!-- 02 / Email (Mappato su attributo standard richiesto dal server) -->
+                <!-- 02 / Email Aziendale -->
                 <div class="form-field-group">
                     <label class="vault-meta">02 / CORPORATE EMAIL ADDRESS</label>
                     <input type="email" name="email" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
                 </div>
 
-                <!-- 03 / Messaggio (Mappato su attributo standard richiesto dal server) -->
+                <!-- 03 / Specifiche del Progetto -->
                 <div class="form-field-group">
                     <label class="vault-meta">03 / PROPOSAL SPECIFICATIONS // VAULT KEY REQUEST</label>
                     <textarea name="message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK, PROJECT DESTINATION AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
