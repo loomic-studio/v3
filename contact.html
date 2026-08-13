@@ -33,22 +33,28 @@ document.addEventListener('keydown', function(e) {
                 <h1 class="verse" style="margin-top: 10px; margin-bottom: 0;">SPECULATIVE LICENSE REQUEST</h1>
             </header>
 
-            <!-- Protocollo mailto: nativo, indipendente e privo di blocchi server esterni -->
-            <form action="mailto:loomic.music@gmail.com" method="GET" enctype="text/plain" class="contact-monolithic-form" autocomplete="off">
+            <!-- Modulo crittografato collegato all'endpoint reale Forminit 8x9zklqtc8t -->
+            <form action="https://forminit.com" method="POST" class="contact-monolithic-form" autocomplete="off">
                 
+                <!-- Parametro ufficiale Forminit per il reindirizzamento pulito alla Home Page -->
+                <input type="hidden" name="_next" value="https://github.io">
+
+                <!-- 01 / Azienda (Mappato su attributo standard richiesto dal server) -->
                 <div class="form-field-group">
                     <label class="vault-meta">01 / COMPANY OR BRAND REPRESENTED</label>
-                    <input type="text" name="COMPANY" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
+                    <input type="text" name="name" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
                 </div>
 
+                <!-- 02 / Email (Mappato su attributo standard richiesto dal server) -->
                 <div class="form-field-group">
                     <label class="vault-meta">02 / CORPORATE EMAIL ADDRESS</label>
-                    <input type="email" name="EMAIL" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
+                    <input type="email" name="email" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
                 </div>
 
+                <!-- 03 / Messaggio (Mappato su attributo standard richiesto dal server) -->
                 <div class="form-field-group">
                     <label class="vault-meta">03 / PROPOSAL SPECIFICATIONS // VAULT KEY REQUEST</label>
-                    <textarea name="SPECIFICATIONS" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
+                    <textarea name="message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK, PROJECT DESTINATION AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
                 </div>
 
                 <button type="submit" class="form-submit-btn" style="padding: 16px; font-size: 10px; margin-top: 10px; width: 100%; cursor: pointer; background-color: #21201D; color: #FFFFFF; border: none; text-transform: uppercase; letter-spacing: 2px;">
