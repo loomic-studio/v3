@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOOMICMUSIC^ — CONTACT // ACQUISITIONS</title>
     <link rel="stylesheet" href="style.css">
-    <!-- CDN ufficiale Forminit SDK da 2 KB -->
-    <script src="https://forminit.com/sdk/v1/forminit.js"></script>
     <script>
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
@@ -38,25 +36,28 @@ document.addEventListener('keydown', function(e) {
                 <h1 class="verse" style="margin-top: 10px; margin-bottom: 0;">SPECULATIVE LICENSE REQUEST</h1>
             </header>
 
-            <!-- Modulo con ID agganciato al controllo JavaScript dell'SDK -->
-            <form id="contact-form" class="contact-monolithic-form">
+            <!-- Modulo conforme alla sintassi ufficiale Forminit senza script aggiuntivi -->
+            <form action="https://forminit.com/f/8x9zklqtc8t" method="POST" class="contact-monolithic-form" autocomplete="off">
                 
-                <!-- 01 / Azienda (Mappato su attributo standard richiesto dal server) -->
+                <!-- Parametro ufficiale per il reindirizzamento automatico dopo il successo -->
+                <input type="hidden" name="_next" value="https://github.io">
+
+                <!-- 01 / Azienda (Nome campo richiesto da Forminit) -->
                 <div class="form-field-group">
                     <label class="vault-meta">01 / COMPANY OR BRAND REPRESENTED</label>
                     <input type="text" name="fi-sender-fullName" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
                 </div>
 
-                <!-- 02 / Email Aziendale (Mappato su attributo standard richiesto dal server) -->
+                <!-- 02 / Email Aziendale (Nome campo richiesto da Forminit) -->
                 <div class="form-field-group">
                     <label class="vault-meta">02 / CORPORATE EMAIL ADDRESS</label>
                     <input type="email" name="fi-sender-email" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
                 </div>
 
-                <!-- 03 / Specifiche del Progetto (Mappato su attributo standard richiesto dal server) -->
+                <!-- 03 / Specifiche del Progetto (Nome campo richiesto da Forminit) -->
                 <div class="form-field-group">
                     <label class="vault-meta">03 / PROPOSAL SPECIFICATIONS // VAULT KEY REQUEST</label>
-                    <textarea name="fi-text-message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK, PROJECT DESTINATION AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
+                    <textarea name="fi-text-your-message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK, PROJECT DESTINATION AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
                 </div>
 
                 <button type="submit" class="form-submit-btn" style="padding: 16px; font-size: 10px; margin-top: 10px; width: 100%; cursor: pointer; background-color: #21201D; color: #FFFFFF; border: none; text-transform: uppercase; letter-spacing: 2px;">
@@ -65,33 +66,5 @@ document.addEventListener('keydown', function(e) {
             </form>
         </main>
     </div>
-
-    <script>
-        // Inizializzazione corretta dell'SDK secondo documentazione Forminit
-        const forminit = new Forminit();
-        const form = document.getElementById('contact-form');
-
-        if (form) {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                
-                const submitBtn = form.querySelector('.form-submit-btn');
-                if (submitBtn) submitBtn.disabled = true;
-
-                const formData = new FormData(form);
-                
-                // Invia i dati tramite canale asincrono protetto con l'ID puro
-                const { error } = await forminit.submit('8x9zklqtc8t', formData);
-
-                if (!error) {
-                    // Reindirizzamento pulito alla index in caso di successo
-                    window.location.href = "https://github.io";
-                } else {
-                    alert("Submission error. Please verify network credentials.");
-                    if (submitBtn) submitBtn.disabled = false;
-                }
-            });
-        }
-    </script>
 </body>
 </html>
