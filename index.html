@@ -59,6 +59,7 @@ img, .visual-core {
 }
 </style>
 </head>
+
 <body>
 
     <!-- BARRA DI NAVIGAZIONE FISSA TRASPARENTE STILE KERING -->
@@ -156,6 +157,7 @@ img, .visual-core {
                 </div>
             </div>
         </section>
+
 <!-- SEZIONE 2: MANIFESTO & IGIENE LEGALE -->
         <section class="poetry-section" id="manifesto">
             <p class="verse">01 / THE ACOUSTIC NEED</p>
@@ -222,7 +224,7 @@ img, .visual-core {
 
 <!-- ==========================================================================
        LOGICA DINAMICA JAVASCRIPT CORRETTA ED OTTIMIZZATA (LCM^ VAULT SYSTEM)
-       ========================================================================== -->
+       ========================================================================= -->
     <script>
         // Logica per l'apertura del cassetto "LISTEN"
         const listenTrigger = document.getElementById('listenTrigger');
@@ -311,7 +313,7 @@ img, .visual-core {
         }
 
         function collapseSlider(e) {
-            // Chiude lo slider solo se il click NON avviene sulle frecce di navigazione
+            // Chiude lo slider solo se il click NON avviene sulle frecce di navigazione o elementi interni
             if (e.target.classList.contains('slider-arrow')) return;
             
             previewHero.classList.add('collapsed');
