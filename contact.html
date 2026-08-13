@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOOMICMUSIC^ — CONTACT // ACQUISITIONS</title>
     <link rel="stylesheet" href="style.css">
-    <!-- SDK Ufficiale Forminit da 2 KB per l'invio asincrono sicuro -->
-    <script src="https://forminit.com"></script>
+    <!-- CDN ufficiale Forminit SDK da 2 KB -->
+    <script src="https://forminit.com/sdk/v1/forminit.js"></script>
     <script>
 document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
@@ -38,25 +38,25 @@ document.addEventListener('keydown', function(e) {
                 <h1 class="verse" style="margin-top: 10px; margin-bottom: 0;">SPECULATIVE LICENSE REQUEST</h1>
             </header>
 
-            <!-- Modulo gestito dall'SDK in background per evitare il blocco 403 -->
-            <form id="loomic-b2b-form" class="contact-monolithic-form" autocomplete="off">
+            <!-- Modulo con ID agganciato al controllo JavaScript dell'SDK -->
+            <form id="contact-form" class="contact-monolithic-form">
                 
-                <!-- 01 / Azienda -->
+                <!-- 01 / Azienda (Mappato su attributo standard richiesto dal server) -->
                 <div class="form-field-group">
                     <label class="vault-meta">01 / COMPANY OR BRAND REPRESENTED</label>
-                    <input type="text" id="company_name" name="name" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
+                    <input type="text" name="fi-sender-fullName" placeholder="E.G. COUTURE HOUSE / PRODUCTION STUDIO" required autocomplete="off">
                 </div>
 
-                <!-- 02 / Email Aziendale -->
+                <!-- 02 / Email Aziendale (Mappato su attributo standard richiesto dal server) -->
                 <div class="form-field-group">
                     <label class="vault-meta">02 / CORPORATE EMAIL ADDRESS</label>
-                    <input type="email" id="company_email" name="email" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
+                    <input type="email" name="fi-sender-email" placeholder="REPRESENTATIVE@COMPANY.COM" required autocomplete="off">
                 </div>
 
-                <!-- 03 / Specifiche del Progetto -->
+                <!-- 03 / Specifiche del Progetto (Mappato su attributo standard richiesto dal server) -->
                 <div class="form-field-group">
                     <label class="vault-meta">03 / PROPOSAL SPECIFICATIONS // VAULT KEY REQUEST</label>
-                    <textarea id="project_specs" name="message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK, PROJECT DESTINATION AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
+                    <textarea name="fi-text-message" placeholder="DESCRIBE THE SPECULATIVE FRAMEWORK, PROJECT DESTINATION AND SONIC PARAMETERS REQUIRED..." rows="6" required></textarea>
                 </div>
 
                 <button type="submit" class="form-submit-btn" style="padding: 16px; font-size: 10px; margin-top: 10px; width: 100%; cursor: pointer; background-color: #21201D; color: #FFFFFF; border: none; text-transform: uppercase; letter-spacing: 2px;">
@@ -67,21 +67,20 @@ document.addEventListener('keydown', function(e) {
     </div>
 
     <script>
-        // Logica di instradamento protetta tramite API Forminit
+        // Inizializzazione corretta dell'SDK secondo documentazione Forminit
         const forminit = new Forminit();
-        const b2bForm = document.getElementById('loomic-b2b-form');
+        const form = document.getElementById('contact-form');
 
-        if (b2bForm) {
-            b2bForm.addEventListener('submit', async (e) => {
+        if (form) {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 
-                // Disabilita temporaneamente il pulsante per evitare invii multipli
-                const submitBtn = b2bForm.querySelector('.form-submit-btn');
+                const submitBtn = form.querySelector('.form-submit-btn');
                 if (submitBtn) submitBtn.disabled = true;
 
-                const formData = new FormData(b2bForm);
+                const formData = new FormData(form);
                 
-                // Esegue l'invio asincrono aggirando il firewall CloudFront
+                // Invia i dati tramite canale asincrono protetto con l'ID puro
                 const { error } = await forminit.submit('8x9zklqtc8t', formData);
 
                 if (!error) {
