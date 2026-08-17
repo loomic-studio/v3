@@ -21,16 +21,17 @@ document.addEventListener('keydown', function(e) {
 </script>
 </head>
 <body>
+
+    <!-- MENU SUPERIORE INTERNO - ESTRATTO DAL CONTAINER PER ALLINEAMENTO PERFETTO CON GALLERY.HTML --> 
+    <nav class="main-nav"> 
+        <div class="nav-left"> 
+            <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit;">LOOMICMUSIC^</a> 
+        </div> 
+    </nav> 
+
+    <!-- IL CONTAINER PARTE DA QUI PER IL MODULO DEI CONTATTI SENZA TOCCARE IL LOGO -->
     <div class="container"> 
-
-        <!-- MENU SUPERIORE INTERNO --> 
-        <nav class="main-nav"> 
-            <div class="nav-left"> 
-                <!-- Spostamento millimetrico a sinistra applicato tramite stile inline senza alterare la struttura di ieri -->
-                <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit; position: relative; left: -14px;">LOOMICMUSIC^</a> 
-            </div> 
-        </nav> 
-
+        
         <!-- SEZIONE CENTRALE MONUMENTALE ACQUISIZIONI B2B --> 
         <main class="contact-page-wrapper"> 
             <header class="contact-header"> 
@@ -39,7 +40,7 @@ document.addEventListener('keydown', function(e) {
             </header> 
             
             <!-- Modulo conforme alla sintassi ufficiale Forminit senza script aggiuntivi --> 
-            <form action="https://forminit.com/f/8x9zklqtc8t" method="POST" class="contact-monolithic-form" autocomplete="off"> 
+            <form action="https://forminit.com" method="POST" class="contact-monolithic-form" autocomplete="off"> 
                 <!-- Parametro ufficiale per il reindirizzamento automatico dopo il successo --> 
                 <input type="hidden" name="_next" value="https://github.io"> 
                 
@@ -67,3 +68,4 @@ document.addEventListener('keydown', function(e) {
     </div>
 </body>
 </html>
+
