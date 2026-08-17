@@ -21,17 +21,16 @@ document.addEventListener('keydown', function(e) {
 </script>
 </head>
 <body>
-
-    <!-- MENU SUPERIORE INTERNO - ESTRATTO DAL CONTAINER PER ALLINEAMENTO PERFETTO CON GALLERY.HTML --> 
-    <nav class="main-nav"> 
-        <div class="nav-left"> 
-            <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit;">LOOMICMUSIC^</a> 
-        </div> 
-    </nav> 
-
-    <!-- IL CONTAINER PARTE DA QUI PER IL MODULO DEI CONTATTI SENZA TOCCARE IL LOGO -->
     <div class="container"> 
-        
+
+        <!-- MENU SUPERIORE INTERNO --> 
+        <nav class="main-nav"> 
+            <div class="nav-left"> 
+                <!-- SPOSTAMENTO NEGATIVO ORIZZONTALE SULL'ASSE MARGIN-LEFT PER L'ALLINEAMENTO -->
+                <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit; display: inline-block; margin-left: -14px;">LOOMICMUSIC^</a> 
+            </div> 
+        </nav> 
+
         <!-- SEZIONE CENTRALE MONUMENTALE ACQUISIZIONI B2B --> 
         <main class="contact-page-wrapper"> 
             <header class="contact-header"> 
@@ -68,4 +67,3 @@ document.addEventListener('keydown', function(e) {
     </div>
 </body>
 </html>
-
