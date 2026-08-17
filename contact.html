@@ -22,14 +22,14 @@ document.addEventListener('keydown', function(e) {
 </head>
 <body>
     <div class="container">
-               <!-- MENU SUPERIORE INTERNO - ALLINEATO ALLA HOMEPAGE E ALL'ARCHIVIO -->
-        <nav class="main-nav sticky-nav" style="display: flex; justify-between; items-center; width: 100%;">
+                       <!-- MENU SUPERIORE INTERNO - BLINDATO E ALLINEATO ALL'ARCHIVIO -->
+        <nav class="main-nav sticky-nav" style="box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <div class="nav-left">
-                <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit;">LOOMICMUSIC^</a>
+                <a href="index.html?skip=true" class="brand-title" style="text-decoration: none; color: inherit; font-size: inherit; letter-spacing: inherit; font-family: inherit;">LOOMICMUSIC^</a>
             </div>
-            <!-- Blocco destro calibrato con l'esatta spaziatura e dimensione dell'archivio visivo -->
-            <div class="nav-right" style="display: flex; align-items: center;">
-                <a href="index.html" class="archive-back-link" style="text-decoration: none; color: inherit; font-size: 11px; letter-spacing: 0.2em; font-family: monospace; text-transform: uppercase;">← CORE ARCHIVE</a>
+            <!-- Blocco destro con spaziatura ed estensione identica a Visual Archive -->
+            <div class="nav-right" style="display: flex; align-items: center; justify-content: flex-end;">
+                <a href="index.html" class="archive-back-link" style="text-decoration: none; color: inherit; font-size: 11px; letter-spacing: 0.15em; font-family: monospace; text-transform: uppercase; white-space: nowrap;">← CORE ARCHIVE</a>
             </div>
         </nav>
 
