@@ -55,16 +55,16 @@
                     <span>02 / BRUTALIST ROOM // [MONOLITH]</span>
                 </div>
             </div>
-
-            <!-- 03 / AVANTGARDE SCULPTURE -->
+                        <!-- 03 / AVANTGARDE SCULPTURE (CORRECTED CAPTION) -->
             <div class="archive-node col-span-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_03_AVANTGARDE_SCULPTURE.jpg" data-type="fabric" style="cursor: pointer;">
                 <div class="image-viewport">
                     <img src="public/assets/archive/LOOMIC_VA_03_AVANTGARDE_SCULPTURE.jpg" alt="AVANTGARDE SCULPTURE" oncontextmenu="return false;" ondragstart="return false;">
                 </div>
                 <div class="node-caption">
-                    <span>03 / AVANTGARDE SCULPTURE // [FABRIC]</span>
+                    <span>03 / SUSPENDED TEXTILE ARCHITECTURE // [FABRIC]</span>
                 </div>
             </div>
+
 
             <!-- 04 / RAW TEXTILE -->
             <div class="archive-node col-span-2 shift-up-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_04_RAW_TEXTILE.jpg" data-type="fabric" style="cursor: pointer;">
@@ -105,7 +105,6 @@
                     <span>07 / WORN LEATHER // [FABRIC]</span>
                 </div>
             </div>
-
             <!-- 08 / MONUMENTAL RUNWAY -->
             <div class="archive-node col-span-2 shift-up-1 lightbox-trigger" data-src="public/assets/archive/LOOMIC_VA_08_MONUMENTAL_RUNWAY.jpg" data-type="monolith" style="cursor: pointer;">
                 <div class="image-viewport">
@@ -156,23 +155,28 @@
     <!-- LOGICA DI FILTRAGGIO ALGORITMICO MATERICO E LIGHTBOX -->
     <script>
         function filterArchive(type, event) {
-            // Aggiorna lo stato visivo dei pulsanti filtro
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
 
-            // Mostra o nasconde i nodi d'immagine in base alle categorie concettuali
-            const items = document.querySelectorAll('.archive-node');
-            items.forEach(item => {
-                if (type === 'all' || item.getAttribute('data-type') === type) {
-                    item.classList.remove('hidden-node');
-                } else {
-                    item.classList.add('hidden-node');
-                }
-            });
+    const grid = document.getElementById('archiveGrid');
+    if (type === 'all') {
+        grid.classList.remove('filter-active'); // Ripristina l'asimmetria monumentale
+    } else {
+        grid.classList.add('filter-active'); // Attiva il fix anti-sormontamento zoom
+    }
+
+    const items = document.querySelectorAll('.archive-node');
+    items.forEach(item => {
+        if (type === 'all' || item.getAttribute('data-type') === type) {
+            item.classList.remove('hidden-node');
+        } else {
+            item.classList.add('hidden-node');
         }
+    });
+}
 
-        // Sistema di Ingrandimento Lightbox su Sfondo Scurito
+
         const lightboxOverlay = document.getElementById('lightboxOverlay');
         const lightboxImage = document.getElementById('lightboxImage');
         const triggers = document.querySelectorAll('.lightbox-trigger');
@@ -186,7 +190,6 @@
             });
         });
 
-        // Chiude la vista al click in un punto qualsiasi dello sfondo oscurato
         lightboxOverlay.addEventListener('click', function() {
             lightboxOverlay.classList.remove('visible');
             setTimeout(() => { lightboxImage.src = ""; }, 300);
