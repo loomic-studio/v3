@@ -447,14 +447,21 @@ body {
     border-bottom: 1px solid #21201D;
 }
 
-/* Griglia asimmetrica fluida */
+/* Griglia Monumentale Originale Ripristinata */
 .archive-masonry-flow {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 80px 40px;
     margin: 40px 0 160px 0;
     width: 100%;
-    align-items: start; /* Impedisce stiramenti verticali strani sotto zoom */
+    align-items: start;
+    min-height: max-content; /* Costringe il browser a calcolare l'altezza in base ai soli nodi visibili */
+}
+
+/* Protezione invalicabile per il footer nelle sezioni filtrate sotto zoom minimo */
+.archive-masonry-flow.filter-active {
+    margin-bottom: 200px !important;
+    padding-bottom: 160px !important; /* Crea uno scudo fisico interno che respinge il footer */
 }
 
 .archive-node {
@@ -493,14 +500,14 @@ body {
     margin-top: 15px;
     letter-spacing: 2px;
     width: 100%;
-    word-wrap: break-word; /* Protezione totale per didascalie lunghe */
+    word-wrap: break-word;
 }
 
-/* --- LOGICA DI ASIMMETRIA STRUTTURATA ED EVOLUZIONE ANTI-ZOOM --- */
+/* --- LOGICA DI ASIMMETRIA STRUTTURATA (PRESERVATA) --- */
 .col-span-2 { grid-column: span 2; }
 .col-span-1 { grid-column: span 1; }
 
-/* Spostamenti attivi SOLO quando non ci sono filtri (Evita il sormontamento) */
+/* Spostamenti attivi SOLO quando non ci sono filtri (Evita collisioni geometriche) */
 .archive-masonry-flow:not(.filter-active) .shift-down-1 { transform: translateY(50px); }
 .archive-masonry-flow:not(.filter-active) .shift-down-2 { transform: translateY(100px); }
 .archive-masonry-flow:not(.filter-active) .shift-up-1 { transform: translateY(-50px); }
@@ -511,7 +518,7 @@ body {
 }
 
 /* ==========================================================================
-   OTTIMIZZAZIONE RESPONSIVA TOTALE (MOBILE SMARTPHONE & SMALL VIEWP0RTS)
+   OTTIMIZZAZIONE RESPONSIVA TOTALE (MOBILE SMARTPHONE & SMALL VIEWPORTS)
    ========================================================================== */
 @media (max-width: 768px) {
     .slider-arrow { font-size: 32px; padding: 0 15px; }
@@ -531,13 +538,12 @@ body {
         flex-wrap: wrap;
     }
     .archive-masonry-flow {
-        grid-template-columns: 1fr !important; /* Forza colonna singola pulita */
+        grid-template-columns: 1fr !important;
         gap: 40px 0 !important;
     }
     .col-span-2, .col-span-1 {
         grid-column: span 1 !important;
     }
-    /* Annulla completamente tutti gli sfasamenti su smartphone */
     .shift-down-1, .shift-down-2, .shift-up-1 {
         transform: none !important;
     }
