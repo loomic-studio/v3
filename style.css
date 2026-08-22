@@ -54,7 +54,7 @@ body {
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.65); /* Aumentata la trasparenza richiesta */
+    background-color: rgba(255, 255, 255, 0.65); /* Trasparenza richiesta */
     backdrop-filter: blur(12px); /* Effetto sfocatura sofisticato d'alta moda */
     -webkit-backdrop-filter: blur(12px);
     padding: 0 50px;
@@ -103,70 +103,65 @@ body {
 }
 
 /* ==========================================================================
-   VETRINA ALBUM (GRIGLIA BILANCIATA RIPRISTINATA)
+   LOGICA E GEOMETRIA NAV-DROPDOWN (MENU SOCIAL ANCORATO E SOLIDO)
    ========================================================================== */
-.gallery-section {
-    margin: 80px 0;
-    width: 100%;
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
+    padding-bottom: 15px; /* Crea un ponte invisibile strutturale */
+    margin-bottom: -15px;
 }
 
-.album-grid {
-    display: flex;
-    gap: 40px; /* Spazio geometrico fisso */
-    width: 100%;
+.dropdown-trigger {
+    color: #21201D;
+    cursor: pointer;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 6px;
+    transition: color 0.4s ease;
 }
 
-.album-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFFFFF;
+    min-width: 140px;
+    border: 1px solid #E5E0DB;
+    z-index: 200;
+    padding: 10px 0;
+    margin-top: -5px;
 }
 
-.visual-core {
+.dropdown-content a {
+    color: #21201D;
+    padding: 8px 20px;
+    text-decoration: none;
     display: block;
-    width: 100%;
-    max-height: 45vh; /* Impedisce agli album di diventare giganti sullo schermo */
-    aspect-ratio: 1 / 1; /* Quadrato simmetrico perfetto */
-    object-fit: cover;
-    filter: grayscale(100%);
-    opacity: 0.95;
-    border: 1px solid #E5E0DB; /* Contorno impercettibile d'archivio */
+    margin-left: 0 !important;
+    font-size: 9px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    color: #8C8782;
+    background-color: #FFFFFF;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-dropdown:hover .dropdown-trigger {
+    color: #8C8782;
 }
 
 /* ==========================================================================
-   TESTI, HUB INTERATTIVO E FOOTER ORIGINALMENTE PRESERVATI
+   INTRO SLIDER, DROPDOWN SOCIAL STABILE E OVERLAY LIGHTBOX
    ========================================================================== */
-.album-caption { font-size: 9px; color: #8C8782; margin-top: 15px; letter-spacing: 2px; }
-.poetry-section { margin: 120px 0 80px 0; text-align: left; max-width: 750px; }
-.verse { font-size: 11px; letter-spacing: 6px; color: #21201D; margin-bottom: 24px; font-weight: 300; }
-.verse-legal { font-size: 10px; color: #8C8782; letter-spacing: 2px; line-height: 2; text-transform: uppercase; }
-.interactive-hub-section { margin: 40px 0 120px 0; width: 100%; }
-.hub-grid { display: flex; gap: 40px; align-items: flex-start; width: 100%; }
-.hub-box { flex: 1; background-color: #FFFFFF; border: 1px solid #E5E0DB; overflow: hidden; transition: height 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-.secondary-box { height: 52px; }
-.primary-box { height: 52px; }
-.primary-box.expanded { height: 165px; }
-.hub-trigger-bar { height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; letter-spacing: 5px; transition: background-color 0.2s ease, color 0.2s ease; }
-.secondary-box .hub-trigger-bar { background-color: #E5E0DB; color: #21201D; }
-.primary-box .hub-trigger-bar { background-color: #8C8782; color: #E5E0DB; }
-.primary-box.expanded .hub-trigger-bar { background-color: #21201D; color: #FFFFFF; }
-.listen-drawer-content { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
-.vault-meta { color: #8C8782; font-size: 8px; letter-spacing: 2px; }
-.input-vault-group { display: flex; gap: 10px; width: 100%; }
-.input-vault-group input { flex: 1; background-color: #FFFFFF; border: 1px solid #E5E0DB; padding: 10px; font-family: monospace; font-size: 11px; color: #21201D; outline: none; letter-spacing: 1px; }
-.input-vault-group button { background-color: #21201D; color: #FFFFFF; border: none; padding: 0 24px; cursor: pointer; font-weight: bold; letter-spacing: 2px; transition: background-color 0.2s ease; }
-.input-vault-group button:hover { background-color: #8C8782; }
-.site-footer { padding: 80px 0; border-top: 1px solid #21201D; width: 100%; }
-.footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-.footer-item { flex: 1; min-width: 200px; }
-.footer-item .label { display: block; font-size: 8px; color: #8C8782; margin-bottom: 15px; letter-spacing: 4px; }
-.footer-item p { font-size: 10px; color: #21201D; }
-.email-link { color: #21201D; text-decoration: none; }
-/* ==========================================================================
-   CSS PEZZO 2: INTRO SLIDER, DROPDOWN SOCIAL STABILE E OVERLAY LIGHTBOX
-   ========================================================================== */
-
-/* Configurazione dell'area della pre-gallery a tutto schermo */
 .preview-hero-container {
     position: relative;
     width: 100%;
@@ -179,7 +174,6 @@ body {
     transition: height 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
 }
 
-/* Stato di chiusura temporanea dello spazio pre-gallery */
 .preview-hero-container.collapsed {
     height: 0;
     opacity: 0;
@@ -220,7 +214,6 @@ body {
     opacity: 0.95;
 }
 
-/* Le grandi parentesi acute verticali di colore Gesso Chiaro */
 .slider-arrow {
     position: absolute;
     top: 50%;
@@ -230,7 +223,7 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 48px;
     font-weight: 300;
-    color: #E5E0DB; /* Tonalità Gesso Chiaro Owens richiesta */
+    color: #E5E0DB; /* Tonalità Gesso Chiaro Owens */
     cursor: pointer;
     z-index: 10;
     padding: 0 30px;
@@ -241,27 +234,23 @@ body {
 }
 
 .slider-arrow:hover {
-    color: #8C8782; /* Tonalità Grigio Pietra Owens al passaggio */
+    color: #8C8782; /* Tonalità Grigio Pietra Owens */
     opacity: 1;
 }
 
 .arrow-left { left: 0; }
 .arrow-right { right: 0; }
 
-/* ==========================================================================
-   FORMATTAZIONE TEXT EDITORIALE (BASSO A SINISTRA CON FILTRO LINEARE)
-   ========================================================================== */
 .magazine-text {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 100px 50px 60px 50px; /* Generoso spazio interno */
+    padding: 100px 50px 60px 50px;
     z-index: 20;
     text-align: left;
     pointer-events: none;
     user-select: none;
-    /* Sfumatura nera liquida, da trasparente a semi-opaca per proteggere i font */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0) 100%);
 }
 
@@ -269,7 +258,7 @@ body {
     display: block;
     font-size: 8px;
     letter-spacing: 4px;
-    color: #E5E0DB; /* Gesso chiaro */
+    color: #E5E0DB;
     margin-bottom: 8px;
     font-weight: 700;
 }
@@ -280,69 +269,12 @@ body {
     font-weight: 400;
     letter-spacing: 5px;
     line-height: 1.6;
-    color: #FFFFFF; /* Bianco puro per massimo contrasto */
+    color: #FFFFFF;
     text-transform: uppercase;
 }
 
 /* ==========================================================================
-   LOGICA E GEOMETRIA NAV-DROPDOWN (MENU SOCIAL ANCORATO E SOLIDO)
-   ========================================================================== */
-.nav-dropdown {
-    position: relative;
-    display: inline-block;
-    margin-left: 40px;
-    padding-bottom: 15px; /* Crea un ponte invisibile strutturale per non far cadere il mouse */
-    margin-bottom: -15px;
-}
-
-.dropdown-trigger {
-    color: #21201D;
-    cursor: pointer;
-    font-weight: 400;
-    position: relative;
-    padding-bottom: 6px;
-    transition: color 0.4s ease;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #FFFFFF;
-    min-width: 140px;
-    border: 1px solid #E5E0DB;
-    z-index: 200;
-    padding: 10px 0;
-    margin-top: -5px; /* Avvicina millimetricamente il box alla scritta */
-}
-
-.dropdown-content a {
-    color: #21201D;
-    padding: 8px 20px;
-    text-decoration: none;
-    display: block;
-    margin-left: 0 !important;
-    font-size: 9px;
-    letter-spacing: 2px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-    color: #8C8782;
-    background-color: #FFFFFF;
-}
-
-.nav-dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.nav-dropdown:hover .dropdown-trigger {
-    color: #8C8782;
-}
-
-/* ==========================================================================
-   INTERFACCIA LIGHTBOX (OSCURAMENTO SCONDO SITO AL CLICK)
+   OWENS PURIFICATION: RIMOZIONE CORNICE LIGHTBOX (FOTO NUDA SU NERO)
    ========================================================================== */
 .lightbox-overlay {
     position: fixed;
@@ -350,7 +282,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85); /* Sfondo scurito d'atmosfera richiesto */
+    background-color: rgba(0, 0, 0, 0.85);
     z-index: 300;
     display: flex;
     align-items: center;
@@ -360,7 +292,6 @@ body {
     transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Attiva l'area di oscuramento a pieno schermo */
 .lightbox-overlay.visible {
     opacity: 1;
     pointer-events: auto;
@@ -372,38 +303,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF; /* Mantiene l'anima bianca del visual */
-    padding: 10px;
-}
-
-.lightbox-content img {
-    max-width: 100%;
-    max-height: 75vh;
-    object-fit: contain;
-    display: block;
-    filter: grayscale(100%); /* Preserva l'estetica Loomic */
-}
-
-/* Ottimizzazioni Mobile */
-@media (max-width: 768px) {
-    .slider-arrow { font-size: 32px; padding: 0 15px; }
-    .sticky-nav { padding: 0 20px; }
-    .magazine-text { padding: 40px 20px 30px 20px; }
-    .mag-headline { font-size: 10px; letter-spacing: 3px; }
-    .lightbox-content { max-width: 95vw; padding: 5px; }
-}
-
-/* ==========================================================================
-   OWENS PURIFICATION: RIMOZIONE CORNICE LIGHTBOX (FOTO NUDA SU NERO)
-   ========================================================================== */
-.lightbox-content {
-    max-width: 85vw;
-    max-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent !important; /* Elimina il fondo bianco */
-    padding: 0 !important; /* Elimina la cornice da figurina */
+    background-color: transparent !important;
+    padding: 0 !important;
 }
 
 .lightbox-content img {
@@ -412,8 +313,66 @@ body {
     object-fit: contain;
     display: block;
     filter: grayscale(100%);
-    border: none !important; /* Garantisce l'assenza di bordi estranei */
+    border: none !important;
 }
+
+/* ==========================================================================
+   VETRINA ALBUM (GRIGLIA BILANCIATA RIPRISTINATA)
+   ========================================================================== */
+.gallery-section {
+    margin: 80px 0;
+    width: 100%;
+}
+
+.album-grid {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.album-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.visual-core {
+    display: block;
+    width: 100%;
+    max-height: 45vh;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    filter: grayscale(100%);
+    opacity: 0.95;
+    border: 1px solid #E5E0DB;
+}
+
+.album-caption { font-size: 9px; color: #8C8782; margin-top: 15px; letter-spacing: 2px; }
+.poetry-section { margin: 120px 0 80px 0; text-align: left; max-width: 750px; }
+.verse { font-size: 11px; letter-spacing: 6px; color: #21201D; margin-bottom: 24px; font-weight: 300; }
+.verse-legal { font-size: 10px; color: #8C8782; letter-spacing: 2px; line-height: 2; text-transform: uppercase; }
+.interactive-hub-section { margin: 40px 0 120px 0; width: 100%; }
+.hub-grid { display: flex; gap: 40px; align-items: flex-start; width: 100%; }
+.hub-box { flex: 1; background-color: #FFFFFF; border: 1px solid #E5E0DB; overflow: hidden; transition: height 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+.secondary-box { height: 52px; }
+.primary-box { height: 52px; }
+.primary-box.expanded { height: 165px; }
+.hub-trigger-bar { height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; letter-spacing: 5px; transition: background-color 0.2s ease, color 0.2s ease; }
+.secondary-box .hub-trigger-bar { background-color: #E5E0DB; color: #21201D; }
+.primary-box .hub-trigger-bar { background-color: #8C8782; color: #E5E0DB; }
+.primary-box.expanded .hub-trigger-bar { background-color: #21201D; color: #FFFFFF; }
+.listen-drawer-content { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.vault-meta { color: #8C8782; font-size: 8px; letter-spacing: 2px; }
+.input-vault-group { display: flex; gap: 10px; width: 100%; }
+.input-vault-group input { flex: 1; background-color: #FFFFFF; border: 1px solid #E5E0DB; padding: 10px; font-family: monospace; font-size: 11px; color: #21201D; outline: none; letter-spacing: 1px; }
+.input-vault-group button { background-color: #21201D; color: #FFFFFF; border: none; padding: 0 24px; cursor: pointer; font-weight: bold; letter-spacing: 2px; transition: background-color 0.2s ease; }
+.input-vault-group button:hover { background-color: #8C8782; }
+.site-footer { padding: 80px 0; border-top: 1px solid #21201D; width: 100%; }
+.footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+.footer-item { flex: 1; min-width: 200px; }
+.footer-item .label { display: block; font-size: 8px; color: #8C8782; margin-bottom: 15px; letter-spacing: 4px; }
+.footer-item p { font-size: 10px; color: #21201D; }
+.email-link { color: #21201D; text-decoration: none; }
 
 /* ==========================================================================
    RIPRISTINO FORMATTAZIONE MONUMENTALE PAGINA CONTATTI (CONTACT.HTML)
@@ -423,26 +382,9 @@ body {
     max-width: 650px;
     width: 100%;
 }
-
-.contact-header {
-    margin-bottom: 50px;
-    border-bottom: 1px solid #E5E0DB;
-    padding-bottom: 25px;
-}
-
-.contact-monolithic-form {
-    display: flex;
-    flex-direction: column;
-    gap: 30px; /* Ampi respiri geometrici tra i campi B2B */
-}
-
-.form-field-group {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Campi della licenza rigorosamente in linea con l'estetica Owens */
+.contact-header { margin-bottom: 50px; border-bottom: 1px solid #E5E0DB; padding-bottom: 25px; }
+.contact-monolithic-form { display: flex; flex-direction: column; gap: 30px; }
+.form-field-group { display: flex; flex-direction: column; gap: 10px; }
 .contact-monolithic-form input,
 .contact-monolithic-form textarea,
 .monolithic-select {
@@ -457,31 +399,20 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
     transition: border-color 0.3s ease;
-    border-radius: 0; /* Taglio rigido ad angolo retto */
+    border-radius: 0;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
-
-/* Configurazione freccia per il menu a tendina del protocollo */
-.monolithic-select {
-    cursor: pointer;
-}
-
+.monolithic-select { cursor: pointer; }
 .contact-monolithic-form input:focus,
 .contact-monolithic-form textarea:focus,
-.monolithic-select:focus {
-    border-color: #21201D;
-}
-
-.contact-monolithic-form textarea {
-    resize: none;
-}
+.monolithic-select:focus { border-color: #21201D; }
+.contact-monolithic-form textarea { resize: none; }
 
 /* ==========================================================================
-   VISUAL ARCHIVE EXTENSION (OWENS INTEGRATION & ASYMMETRIC GRID)
+   VISUAL ARCHIVE EXTENSION (OWENS INTEGRATION & ANTI-ZOOM ASYMMETRIC GRID)
    ========================================================================== */
-
 .archive-header {
     margin: 40px 0;
     border-bottom: 1px solid #E5E0DB;
@@ -516,31 +447,28 @@ body {
     border-bottom: 1px solid #21201D;
 }
 
-/* Griglia d'avanguardia nativa a 3 colonne simmetriche per ospitare il disallineamento */
+/* Griglia asimmetrica fluida */
 .archive-masonry-flow {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 80px 40px;
     margin: 40px 0 160px 0;
     width: 100%;
+    align-items: start; /* Impedisce stiramenti verticali strani sotto zoom */
 }
-/* ==========================================================================
-   CSS ULTIMO PEZZO: PROPORZIONI 4:5 E LOGICA DISALLINEAMENTO VISUAL ARCHIVE
-   ========================================================================== */
 
-/* Il singolo nodo dell'archivio visivo: nudo e senza gabbie da figurina */
 .archive-node {
     display: flex;
     flex-direction: column;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Finestra d'immagine bloccata rigidamente in formato 4:5 */
 .image-viewport {
     width: 100%;
     aspect-ratio: 4 / 5;
     overflow: hidden;
     background-color: #FFFFFF;
+    position: relative;
 }
 
 .image-viewport img {
@@ -550,7 +478,7 @@ body {
     object-fit: cover;
     filter: grayscale(100%);
     opacity: 0.95;
-    border: 1px solid #E5E0DB; /* Lo stesso contorno geometrico d'archivio degli album */
+    border: 1px solid #E5E0DB;
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
 }
 
@@ -559,38 +487,58 @@ body {
     opacity: 1;
 }
 
-/* Didascalia minimale allineata con l'estetica degli album nella home */
 .node-caption {
     font-size: 9px;
     color: #8C8782;
     margin-top: 15px;
     letter-spacing: 2px;
+    width: 100%;
+    word-wrap: break-word; /* Protezione totale per didascalie lunghe */
 }
 
-/* --- LOGICA DI ASIMMETRIA STRUTTURATA (RITMO EDITORIALE LOOMIC) --- */
+/* --- LOGICA DI ASIMMETRIA STRUTTURATA ED EVOLUZIONE ANTI-ZOOM --- */
 .col-span-2 { grid-column: span 2; }
 .col-span-1 { grid-column: span 1; }
 
-/* Spostamenti geometrici controllati lungo l'asse verticale */
-.shift-down-1 { transform: translateY(50px); }
-.shift-down-2 { transform: translateY(100px); }
-.shift-up-1 { transform: translateY(-50px); }
+/* Spostamenti attivi SOLO quando non ci sono filtri (Evita il sormontamento) */
+.archive-masonry-flow:not(.filter-active) .shift-down-1 { transform: translateY(50px); }
+.archive-masonry-flow:not(.filter-active) .shift-down-2 { transform: translateY(100px); }
+.archive-masonry-flow:not(.filter-active) .shift-up-1 { transform: translateY(-50px); }
 
-/* Scomparsa immediata e pulita delle tessere quando si filtrano i contenuti */
+/* Scomparsa immediata */
 .hidden-node {
     display: none !important;
 }
 
-/* Ottimizzazione Responsiva per schermi ridotti e Mobile */
+/* ==========================================================================
+   OTTIMIZZAZIONE RESPONSIVA TOTALE (MOBILE SMARTPHONE & SMALL VIEWP0RTS)
+   ========================================================================== */
 @media (max-width: 768px) {
+    .slider-arrow { font-size: 32px; padding: 0 15px; }
+    .sticky-nav { padding: 0 20px; height: 100px; }
+    .site-content-wrapper { margin-top: 100px; }
+    .magazine-text { padding: 40px 20px 30px 20px; }
+    .mag-headline { font-size: 10px; letter-spacing: 3px; }
+    .lightbox-content { max-width: 95vw; padding: 5px; }
+    
+    .archive-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .archive-filters {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
     .archive-masonry-flow {
-        grid-template-columns: 1fr;
-        gap: 60px 0;
+        grid-template-columns: 1fr !important; /* Forza colonna singola pulita */
+        gap: 40px 0 !important;
     }
     .col-span-2, .col-span-1 {
-        grid-column: span 1;
+        grid-column: span 1 !important;
     }
+    /* Annulla completamente tutti gli sfasamenti su smartphone */
     .shift-down-1, .shift-down-2, .shift-up-1 {
-        transform: none;
+        transform: none !important;
     }
 }
